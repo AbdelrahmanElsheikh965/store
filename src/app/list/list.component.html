@@ -26,6 +26,7 @@
                       <img src="{{product.thumbnail}}" width="200px" height="200px" alt="" class="img-fluid">
                     </div>
                   </a>
+
                   <div class="work-content">
                     <div class="row">
                       <div class="col-sm-8">
@@ -33,15 +34,23 @@
                         <div class="w-more">
                           <span class="w-ctegory">{{product.category}}</span> / <span class="w-date">{{product.brand}}</span>
                         </div>
+                        <br>
                       </div>
-                      <div class="col-sm-4">
-                        <div class="w-like">
-                          <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                        </div>
+
+                      
+                      <div> Rate : 
+                        <span class = "fa fa-star checked"></span>  
+                        <span class = "fa fa-star checked"></span>  
+                          <span class = "fa fa-star checked"></span>  
+                          <span class = "fa fa-star unchecked"></span>
                       </div>
-                      <div class="col-sm-4">
-                        <button type="button" (click)="view(product.id)">test</button>
+
+                      <div class="col-md-12"> <br>
+                        <button type="button" (click)="view(product.id)" class="button button-a button-small">View</button> &nbsp;
+                        <button type="button" disabled class="button button-a button-small">Add To Cart</button>
                       </div>
+                      
+                        
                     </div>
                   </div>
                 </div>
