@@ -29,7 +29,6 @@
                     required
                     name="password"
                     ngModel
-                    minlength="8"
                     #password="ngModel"
                     id="inputName" placeholder="Password *">
                 </div>
@@ -52,9 +51,7 @@
             @if (password.touched && password.invalid) {
                 <div class="col-md-12 mb-12">
                     <div class="alert alert-danger">
-                        @if (password.errors?.['required']) {
-                            <strong>Password</strong> field is [required].
-                        }
+                        <strong>Password</strong> field is [required].
                     </div>
                 </div>
             }
