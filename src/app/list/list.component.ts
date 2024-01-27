@@ -6,13 +6,14 @@ import { Route, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { ProductDiscountPipe } from '../Pipes/product-discount.pipe';
 import { ProductIntPricePipe } from '../Pipes/product-int-price.pipe';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
     selector: 'app-list',
     standalone: true,
     templateUrl: './list.component.html',
     styleUrl: './list.component.css',
-    imports: [ContainerComponent, DetailComponent, HeaderComponent, DatePipe, ProductDiscountPipe, ProductIntPricePipe]
+    imports: [ContainerComponent, DetailComponent, HeaderComponent, DatePipe, ProductDiscountPipe, ProductIntPricePipe, ProductCardComponent]
 })
 export class ListComponent {
 
@@ -21,7 +22,5 @@ export class ListComponent {
 
     @Input() ReceivedData: any;
 
-    view(id: number){
-        this.routeObj.navigate(['details', id])
-    }
+   
 }
