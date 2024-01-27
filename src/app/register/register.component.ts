@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -9,11 +9,10 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+ 
+  constructor(public FB: FormBuilder){}
 
-  RegisterForm : FormGroup;
-
-  constructor(){
-    this.RegisterForm = new FormGroup({
+  RegisterForm : FormGroup =  this.FB.group({
       fName: new FormControl('', Validators.required),
       lName: new FormControl('', Validators.required),
       email: new FormControl('', [
@@ -24,12 +23,15 @@ export class RegisterComponent {
         Validators.required,
         Validators.minLength(8)
       ]),
-      address: new FormControl('', [Validators.required, Validators.maxLength(15)]),
+      address: new FormControl('', [Validators.required, Validators.maxLength(15)])
     });
+    
+    onSubmit() {
+    if (this.RegisterForm.valid) {
+      console.log('Form submitted:', this.RegisterForm.value);
+    } else {
+      console.log('Form is invalid');
+    }
   }
 
-  storeProduct(){
-    console.log(this.RegisterForm)
-    console.log(this.RegisterForm.value)    // object to be sent to backend.
-  }
 }
