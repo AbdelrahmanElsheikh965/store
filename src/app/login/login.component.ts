@@ -15,12 +15,11 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  // For debugging
   checkLogin(){
     console.log(this.email);
   }
 
   handleLogin(form: any){
-    console.log(form.value);
+    console.log(form);
   }
 }

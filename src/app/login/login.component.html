@@ -4,7 +4,7 @@
             Log in
         </h3>
     </div>
-    <form class="form-mf" #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm.value)">
+    <form class="form-mf" #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
         <div class="row">
             <!-- old way -->
             <!-- (change)="checkInput($event)" // to fire changeeventhandler to write data -->
@@ -39,7 +39,12 @@
             @if (email.touched && email.invalid) {
                 <div class="col-md-12 mb-12">
                     <div class="alert alert-danger">
-                        <strong>Email</strong> field is [required] to be [email format].
+                        @if (email.errors?.['required']) {
+                            <strong>Email</strong> field is [required].
+                        }
+                        @if(email.errors?.['pattern']){
+                            <strong>Email</strong> must be [email-formatted].
+                        }
                     </div>
                 </div>
             }
@@ -47,7 +52,9 @@
             @if (password.touched && password.invalid) {
                 <div class="col-md-12 mb-12">
                     <div class="alert alert-danger">
-                        <strong>Password</strong> field is required and atleast 8 characters.
+                        @if (password.errors?.['required']) {
+                            <strong>Password</strong> field is [required].
+                        }
                     </div>
                 </div>
             }
