@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { ActivatedRoute } from '@angular/router';
+import { Product } from '../../HelperInterfaces/Product';
 
 @Component({
     selector: 'app-detail',
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent {
 
-    allProducts : any = [
+    allProducts : Product[] = [
         {
           "id": 1,
           "title": "iPhone 9",
@@ -400,13 +401,12 @@ export class DetailComponent {
       ];
     
     
-    productDetails : any;
+    productDetails !: Product;
     constructor(private acRoute: ActivatedRoute){}
 
     ngOnInit(){
         const id = this.acRoute.snapshot.params['id'];
-        console.log(id);
-        this.productDetails = this.allProducts.find( (product: any) => product.id == id );
+        this.productDetails = this.allProducts.find( (product: Product) => product.id == id )!;
     }
 
 }

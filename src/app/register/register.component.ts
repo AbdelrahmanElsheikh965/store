@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { passwordMatchValidator } from '../CustomValidators/ConfirmPassword';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 })
 export class RegisterComponent {
  
-  constructor(public FB: FormBuilder){}
+  constructor(private FB: FormBuilder){}
 
   RegisterForm : FormGroup =  this.FB.group({
       fName: new FormControl('', Validators.required),
@@ -19,18 +20,21 @@ export class RegisterComponent {
         Validators.required,
         Validators.pattern("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$")
       ]),
+      address: new FormControl('', [Validators.required, Validators.maxLength(15)]),
+
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(8)
+        Validators.minLength(8), 
+        passwordMatchValidator
       ]),
-      address: new FormControl('', [Validators.required, Validators.maxLength(15)])
+      confirmPassword: new FormControl('', [Validators.required, passwordMatchValidator]),
     });
     
     onSubmit() {
     if (this.RegisterForm.valid) {
-      console.log('Form submitted:', this.RegisterForm.value);
+      console.log('Form submitted:', this.RegisterForm);
     } else {
-      console.log('Form is invalid');
+      console.log('Form is invalid', this.RegisterForm);
     }
   }
 

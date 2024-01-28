@@ -4,13 +4,5 @@
 }  
 .unchecked {  
     font-size : 20px;  
-}  
-
-.in-stock{
-    background-color: green;
-}
-
-.out-of-stock{
-    background-color: red;
-}
+} 
 

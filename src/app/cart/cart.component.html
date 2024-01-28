@@ -1,1 +1,20 @@
-<p>cart works!</p>
+
+<div class="box-comments">
+    <div class="title-box-2">
+        <h4 class="title-comments title-left">Cart Content</h4>
+    </div>
+    
+    @for (product of myData; track $index) {
+     
+        <div class="comment-avatar">
+            <img src="{{product.thumbnail}}" height="100px" width="100px">
+        </div>
+        <div class="comment-details">
+            <h4 class="comment-author">{{product.title}}</h4>
+            <strong>Price: </strong> <span>  {{product.price}}$  </span>
+            <strong>Description: </strong> <p>    {{product.description}}  </p>
+        </div>
+        
+    }
+
+</div>

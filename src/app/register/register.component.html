@@ -43,13 +43,14 @@
                 </div>
             </div>
 
-            <!-- <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3">
                 <div class="form-group">
                     <input type="password" class="form-control input-mf"
+                    formControlName="confirmPassword"
                         id="inputName" placeholder="Confirm Password *"
                         required>
                 </div>
-            </div> -->
+            </div>
 
             <div class="col-md-6 mb-3">
                 <div class="form-group">
@@ -113,9 +114,14 @@
                 </div>
             }
             
+            @if(RegisterForm.controls['password'].touched &&
+                RegisterForm.controls['confirmPassword'].touched &&
+                 !RegisterForm.get('confirmPassword')?.hasError('required')){
+                <strong>Passwords do not match.</strong>
+            }
+              
             <div class="col-md-12">
                 <button type="submit"
-                    [disabled]="RegisterForm.invalid"
                     class="button button-a button-big button-rouded">Save
                     Data</button>
             </div>
