@@ -32,7 +32,6 @@ export class ProductCardComponent {
       });
     }
  
-  
   view(id: number){
     this.routeObj.navigate(['details', id])
   }
@@ -42,18 +41,17 @@ export class ProductCardComponent {
   }
   
   addProduct(newproductId: number){
-    console.log(this.productsData);
-    
 
-    this.cartService.addProduct(this.getExactProduct(newproductId)!);   // ! non-null assertion operator.
+    var addedProduct = this.getExactProduct(newproductId)!;
+    
+    addedProduct.quantity = 1;
+
+    this.cartService.addProduct(addedProduct);   // ! non-null assertion operator.
 
     // for debugging
     this.cartService
       .getProducts()
       .subscribe(data => console.log(data));
-  }
-  
-  getIntegral(value: number){
-    return Math.floor(value);
+      
   }
 }

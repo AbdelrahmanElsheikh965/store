@@ -11,6 +11,7 @@ export interface Product{
     category: string,
     thumbnail: string,
     images: string[],
-    createdAt: string
+    createdAt: string,
+    quantity: number
 
 }

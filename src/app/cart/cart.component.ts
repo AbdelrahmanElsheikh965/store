@@ -12,11 +12,40 @@ import { Product } from '../../HelperInterfaces/Product';
 export class CartComponent {
 
   constructor(private cartService: CartService){}
-  
+
   myData!: Product[];
 
   ngOnInit(){
     this.cartService.getProducts().subscribe( (dataOfProducts) => this.myData = dataOfProducts );
+    console.log(this.myData);
+  }
+  
+  getExactProduct(productId: number){
+    return this.myData.find( (product: Product) => product.id == productId );
+  }
+
+  increaseQuantity(p_id: number){
+    
+    var addedProduct = this.getExactProduct(p_id)!;
+
+    if((addedProduct.quantity + 1) <= addedProduct.stock){
+      addedProduct.quantity++;
+    }else{
+      alert('Out Of Stock');
+    }
+
+  }
+
+  decreaseQuantity(p_id: number){
+
+    var addedProduct = this.getExactProduct(p_id)!;
+
+    if((addedProduct.quantity - 1) >= 1){
+      addedProduct.quantity--;
+    }else{
+      alert('Error');
+    }
+
   }
 
 }
