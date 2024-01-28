@@ -42,7 +42,8 @@
           </div>              
 
           <!-- {{getIntegral(product.rating)}} -->
-          <!-- <p-rating (ngModel)="getIntegral(product.rating)" [readonly]="true" [cancel]="false"></p-rating> -->
+          <p-rating [(ngModel)]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+          <!-- <p-rating [(ngModel)]="product.rating"></p-rating> -->
 
           <div class="col-md-12"> <br>
             <button type="button" (click)="view(product.id)" class="button button-a button-small">View</button> &nbsp;

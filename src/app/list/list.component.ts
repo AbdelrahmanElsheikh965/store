@@ -7,6 +7,7 @@ import { DatePipe } from '@angular/common';
 import { ProductDiscountPipe } from '../Pipes/product-discount.pipe';
 import { ProductIntPricePipe } from '../Pipes/product-int-price.pipe';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-list',
@@ -17,10 +18,8 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 })
 export class ListComponent {
 
-
     constructor(private routeObj : Router){}
 
     @Input() ReceivedData: any;
-
    
 }

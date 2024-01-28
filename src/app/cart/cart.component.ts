@@ -13,7 +13,7 @@ export class CartComponent {
 
   constructor(private cartService: CartService){}
   
-  myData!: Product[] ;// = this.cartService.getProducts().subscribe((data) => data);
+  myData!: Product[];
 
   ngOnInit(){
     this.cartService.getProducts().subscribe( (dataOfProducts) => this.myData = dataOfProducts );

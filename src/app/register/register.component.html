@@ -47,8 +47,7 @@
                 <div class="form-group">
                     <input type="password" class="form-control input-mf"
                     formControlName="confirmPassword"
-                        id="inputName" placeholder="Confirm Password *"
-                        required>
+                        id="inputName" placeholder="Confirm Password *" required>
                 </div>
             </div>
 
@@ -114,11 +113,11 @@
                 </div>
             }
             
-            @if(RegisterForm.controls['password'].touched &&
+            <!-- @if(RegisterForm.controls['password'].touched &&
                 RegisterForm.controls['confirmPassword'].touched &&
                  !RegisterForm.get('confirmPassword')?.hasError('required')){
                 <strong>Passwords do not match.</strong>
-            }
+            } -->
               
             <div class="col-md-12">
                 <button type="submit"

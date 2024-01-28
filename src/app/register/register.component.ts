@@ -24,11 +24,10 @@ export class RegisterComponent {
 
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(8), 
-        passwordMatchValidator
+        Validators.minLength(8)        
       ]),
-      confirmPassword: new FormControl('', [Validators.required, passwordMatchValidator]),
-    });
+      confirmPassword: new FormControl('', [Validators.required])
+    }, passwordMatchValidator);
     
     onSubmit() {
     if (this.RegisterForm.valid) {
