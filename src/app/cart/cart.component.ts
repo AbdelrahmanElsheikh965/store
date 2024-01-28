@@ -17,7 +17,6 @@ export class CartComponent {
 
   ngOnInit(){
     this.cartService.getProducts().subscribe( (dataOfProducts) => this.myData = dataOfProducts );
-    console.log(this.myData);
   }
   
   getExactProduct(productId: number){
@@ -47,5 +46,9 @@ export class CartComponent {
     }
 
   }
+
+  removeProduct(p_id: number){
+      this.cartService.cartElements.next(this.cartService.cartElements.getValue().filter((product) => product.id != p_id));
+    }
 
 }

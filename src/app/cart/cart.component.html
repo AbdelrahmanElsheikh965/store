@@ -13,11 +13,12 @@
             <h4 class="comment-author">{{product.title}}</h4>
             <strong>Price: </strong> <span>  {{product.price}}$  </span> <br>
             <strong>Description: </strong> <p>  {{product.description.substring(0,100)}} ...  </p>
-            
-            
+
             <button class="btn btn-success" (click)="increaseQuantity(product.id)">Increase + </button> &nbsp; &nbsp;
             <span>{{product.quantity}}</span> &nbsp; &nbsp;
             <button class="btn btn-danger" (click)="decreaseQuantity(product.id)">Decrease - </button>
+            &nbsp; &nbsp;
+            <button class="btn btn-warning" (click)="removeProduct(product.id)">Remove Product</button>
         </div>
         <br> <hr>
     }@empty {

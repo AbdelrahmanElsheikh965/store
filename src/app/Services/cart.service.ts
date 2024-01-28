@@ -8,7 +8,7 @@ import { Product } from '../../HelperInterfaces/Product';
 export class CartService {
   constructor() { }
 
-  private cartElements = new BehaviorSubject<Array<Product>>([]);
+  public cartElements = new BehaviorSubject<Array<Product>>([]);
 
   getProducts(){
     return this.cartElements.asObservable();
