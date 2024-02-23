@@ -9,3 +9,5 @@ Pages:
 4. Login (Not backend-implemented yet!)
 
 Todo: Deploy this application🐱‍👤🚀
+
+NOTE: This will be an amazing project if done perfectly.
