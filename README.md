@@ -27,4 +27,7 @@ When developing web applications, you can use NgOptimizedImages to manage images
 
 4. Setup Routes for Unique Testing
 
+5. CSS Automatic Removal
+
+
 
