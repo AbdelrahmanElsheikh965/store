@@ -11,3 +11,5 @@ Pages:
 Todo: Deploy this application🐱‍👤🚀
 
 NOTE: This will be an amazing project if done perfectly.
+
+We can develop progressive web applications (PWA) using Angular
