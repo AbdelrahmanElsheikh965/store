@@ -13,3 +13,6 @@ Todo: Deploy this application🐱‍👤🚀
 NOTE: This will be an amazing project if done perfectly.
 
 We can develop progressive web applications (PWA) using Angular
+
+Both AngularJS and Angular significantly reduce development time. However, due to the component-based architecture and more effective data binding, 
+Angular apps can be five times faster than AngularJS.
