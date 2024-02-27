@@ -25,3 +25,6 @@ Angular apps can be five times faster than AngularJS.
 3. Lazy Loaded Images Slow Down Page Render Error 
 When developing web applications, you can use NgOptimizedImages to manage images. This tool can detect which images are essential for the initial app loading. If you don’t specify these images as a top priority, they will load slowly, resulting in a longer loading time for the first app launch.
 
+4. Setup Routes for Unique Testing
+
+
